@@ -75,9 +75,9 @@ main {
   }
 }
 
-//-------------------------//
-//     About - Grid       //
-//-----------------------//
+/*-------------------------*/
+/*     About - Grid       */
+/*-----------------------*/
 
 .about-info {
   display: grid;
@@ -115,6 +115,54 @@ main {
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
   }
+}
+
+/*-----------------------*/
+/*       Projects       */
+/*---------------------*/
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 5px #fff solid;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3 rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+// Inherits/extends from .btn
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+// Inherits/extends from .btn
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #fff;
 }
 
 #main-footer {
